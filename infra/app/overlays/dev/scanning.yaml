@@ -7,9 +7,9 @@ spec:
   filterTags:
     pattern: '^dev-(?P<timestamp>.*)$'
     extract: '$timestamp'
-    policy:
-      alphabetical:
-        order: asc
+  policy:
+    alphabetical:
+      order: asc
 ---
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
@@ -20,6 +20,6 @@ spec:
   filterTags:
     pattern: '^dev-(?P<timestamp>.*)$'
     extract: '$timestamp'
-    policy:
-      alphabetical:
-        order: asc
+  policy:
+    alphabetical:
+      order: asc

@@ -35,10 +35,10 @@ jobs:
       - name: Add extra tags
         run: |
           docker tag \
-            "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:${{ steps.tag.outputs.tag }}" \
+            "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:${{ steps.tag.outputs.name }}" \
             "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:${{ steps.branch.outputs.name }}"
           docker tag \
-            "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:${{ steps.tag.outputs.tag }}" \
+            "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:${{ steps.tag.outputs.name }}" \
             "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:latest"
 
       - name: Docker Login

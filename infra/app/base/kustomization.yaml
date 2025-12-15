@@ -4,3 +4,4 @@ metadata:
   name: rd-app
 resources:
 - helmRelease.yaml
+- scanning.yaml

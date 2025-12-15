@@ -3,8 +3,12 @@ name: Build UI
 on:
   push:
     branches: [ "master" ]
+    paths:
+      - rd-ui
   pull_request:
     branches: [ "master" ]
+    paths:
+      - rd-ui
 
 jobs:
   ci:

@@ -11,4 +11,9 @@ public class Api {
     public class BuildVersion {
         public static final String VERSION = "/version";
     }
+
+    @UtilityClass
+    public class Todos {
+        public static final String TODOS = "/todos";
+    }
 }

@@ -4,11 +4,11 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - rd-ui
+      - 'rd-ui/**'
   pull_request:
     branches: [ "master" ]
     paths:
-      - rd-ui
+      - 'rd-ui/**'
 
 jobs:
   ci:

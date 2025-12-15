@@ -1,7 +1,7 @@
 nameOverride: ""
 fullnameOverride: ""
 
-rdCapstone:
+rdApp:
   api:
     image:
       repository: vitaliyavramenko/rd-api

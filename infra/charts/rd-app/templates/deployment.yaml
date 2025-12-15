@@ -1,9 +1,9 @@
-{{- range $name, $app := .Values.rdCapstone }}
+{{- range $name, $app := .Values.rdApp }}
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "rd-capstone.fullname" $ }}
+  name: {{ include "rd-app.fullname" $ }}
   labels:
     {{- $name | nindent 4 }}
 spec:

@@ -1,4 +1,4 @@
-{{- define "rd-capstone.fullname" -}}
+{{- define "rd-app.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}

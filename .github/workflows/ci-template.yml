@@ -27,8 +27,8 @@ jobs:
       - name: Build Docker with Maven
         run: mvn clean package -f ${{ inputs.module }} -Pdocker -Ddocker.image.tag=${{ steps.tag.outputs.tag }}
 
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v3
+      - name: Docker Login
+        uses: docker/login-action@v3.6.0
         with:
           username: ${{ vars.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}

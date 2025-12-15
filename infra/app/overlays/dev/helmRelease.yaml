@@ -10,4 +10,4 @@ spec:
       api:
         replicas: 1
         image:
-          tag: dev
+          tag: dev # {"$imagepolicy": "flux-system:rd-api:tag"}

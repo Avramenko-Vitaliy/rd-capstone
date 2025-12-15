@@ -1,0 +1,47 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageRepository
+metadata:
+  name: rd-ui
+  namespace: flux-system
+spec:
+  image: vitaliyavramenko/rd-ui
+  interval: 5m
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageRepository
+metadata:
+  name: rd-api
+  namespace: flux-system
+spec:
+  image: vitaliyavramenko/rd-api
+  interval: 5m
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: rd-ui
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: rd-ui
+  filterTags:
+    pattern: '^latest$'
+  policy:
+    alphabetical: {}
+  digestReflectionPolicy: Always
+  interval: 10m
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: rd-api
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: rd-api
+  filterTags:
+    pattern: '^latest$'
+  policy:
+    alphabetical: {}
+  digestReflectionPolicy: Always
+  interval: 10m

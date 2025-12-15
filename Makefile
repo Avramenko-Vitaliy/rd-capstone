@@ -6,11 +6,11 @@ bootstrap:
 	flux bootstrap github \
       --owner=$(GITHUB_USER) \
       --repository=$(REPO) \
-      --branch=master \
+      --branch=dev \
       --path=./infra/clusters/rd-cluster \
       --personal
 
-build:
+build-app:
 	mvn clean package -Pdocker
 
 lint:
@@ -18,3 +18,6 @@ lint:
 
 template:
 	helm template ./infra/charts/rd-app -f ./infra/charts/rd-app/values.yaml -n $(NAMESPACE)
+
+build-infra:
+	flux build ks rd-dev --path ./infra/clusters/rd-cluster --kustomization-file ./infra/clusters/rd-cluster/app-dev.yaml

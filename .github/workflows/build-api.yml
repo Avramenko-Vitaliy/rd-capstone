@@ -1,0 +1,13 @@
+name: Build API
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci-template.yml
+    with:
+      module: rd-api

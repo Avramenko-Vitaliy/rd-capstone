@@ -11,5 +11,5 @@ spec:
       version: "0.1.0"
       sourceRef:
         kind: GitRepository
-        name: rd-app
+        name: rd-cluster
         namespace: flux-system

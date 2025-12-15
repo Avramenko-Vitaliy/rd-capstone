@@ -2,11 +2,11 @@ name: Build UI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "dev", "prod" ]
     paths:
       - 'rd-ui/**'
   pull_request:
-    branches: [ "master" ]
+    branches: [ "dev", "prod" ]
     paths:
       - 'rd-ui/**'
 

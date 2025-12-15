@@ -2,11 +2,11 @@ name: Build API
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "dev", "prod" ]
     paths:
       - 'rd-api/**'
   pull_request:
-    branches: [ "master" ]
+    branches: [ "dev", "prod" ]
     paths:
       - 'rd-api/**'
 

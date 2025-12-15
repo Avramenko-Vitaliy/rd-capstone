@@ -20,17 +20,23 @@ jobs:
           java-version: '25'
           distribution: 'corretto'
 
+      - name: Extract branch name
+        id: branch
+        shell: bash
+        run: echo "name=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+
       - name: Compute image tag
         id: tag
-        run: echo "tag=$(date -u +%Y%m%d-%H%M%S)" >> "$GITHUB_OUTPUT"
+        run: echo "tag=${{ steps.branch.outputs.name }}-$(date -u +%Y%m%d-%H%M%S)" >> "$GITHUB_OUTPUT"
 
       - name: Build Docker with Maven
         run: mvn clean package -f ${{ inputs.module }} -Pdocker -Ddocker.image.tag=${{ steps.tag.outputs.tag }}
 
-      - name: Add extra tag (latest)
+      - name: Add extra tags
         run: |
           docker tag \
             "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:${{ steps.tag.outputs.tag }}" \
+            "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:${{ steps.branch.outputs.name }}" \
             "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:latest"
 
       - name: Docker Login
@@ -42,4 +48,5 @@ jobs:
       - name: Push Image ${{ steps.tag.outputs.tag }}
         run: |
           docker push "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:${{ steps.tag.outputs.tag }}"
+          docker push "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:${{ steps.branch.outputs.name }}"
           docker push "${{ vars.DOCKER_USERNAME }}/${{ inputs.module }}:latest"

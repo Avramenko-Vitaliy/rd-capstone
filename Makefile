@@ -4,13 +4,14 @@ NAMESPACE=default
 
 bootstrap:
 	flux bootstrap github \
+	  --components-extra=image-reflector-controller,image-automation-controller \
       --owner=$(GITHUB_USER) \
       --repository=$(REPO) \
       --branch=dev \
       --path=./infra/clusters/rd-cluster \
       --personal
 
-build-app:
+build:
 	mvn clean package -Pdocker
 
 lint:

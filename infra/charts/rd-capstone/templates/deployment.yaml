@@ -1,0 +1,38 @@
+{{- range $name, $app := .Values.rdCapstone }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "rd-capstone.fullname" $ }}
+  labels:
+    {{- $name | nindent 4 }}
+spec:
+  replicas: {{ $app.replicas }}
+  selector:
+    matchLabels:
+      {{- $name | nindent 6 }}
+  template:
+    metadata:
+      name: {{ $name }}
+      labels:
+        {{- $name | nindent 8 }}
+    spec:
+      containers:
+        - name: {{ $name }}
+          image: "{{ $app.image.repository }}:{{ $app.image.tag }}"
+          {{- if $app.image.pullPolicy }}
+          imagePullPolicy: {{ $app.image.pullPolicy }}
+          {{- end }}
+          ports:
+            - containerPort: {{ $app.image.port }}
+              protocol: TCP
+          {{- if $app.probes.readiness }}
+          {{- toYaml $app.probes.readiness | nindent 10 }}
+          {{- end }}
+          {{- if $app.probes.liveness }}
+          {{- toYaml $app.probes.liveness | nindent 10 }}
+          {{- end }}
+      {{- if $app.restartPolicy }}
+      restartPolicy: {{ $app.restartPolicy }}
+      {{- end }}
+{{- end }}

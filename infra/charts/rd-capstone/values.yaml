@@ -1,0 +1,52 @@
+nameOverride: ""
+fullnameOverride: ""
+
+rdCapstone:
+  api:
+    image:
+      repository: vitaliyavramenko/rd-api
+      tag: latest
+      port: 8080
+    replicas: 1
+    probes:
+      liveness:
+        exec:
+          command:
+            - sh
+            - -c
+            - |
+              curl -fsS http://127.0.0.1:8080/actuator/health/liveness | grep -q '"status":"UP"'
+        initialDelaySeconds: 15
+        periodSeconds: 30
+        timeoutSeconds: 1
+        failureThreshold: 5
+      readiness:
+        exec:
+          command:
+            - sh
+            - -c
+            - |
+              curl -fsS http://127.0.0.1:8080/actuator/health/readiness | grep -q '"status":"UP"'
+        initialDelaySeconds: 15
+        periodSeconds: 30
+        timeoutSeconds: 1
+        failureThreshold: 5
+  ui:
+    image:
+      repository: vitaliyavramenko/rd-ui
+      tag: latest
+      port: 80
+    replicas: 1
+    probes:
+      liveness:
+        httpGet:
+          port: 80
+          path: /version.html
+        periodSeconds: 10
+      readiness:
+        tcpSocket:
+          port: 80
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        timeoutSeconds: 1
+        failureThreshold: 3

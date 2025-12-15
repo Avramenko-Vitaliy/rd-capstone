@@ -8,7 +8,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: master
+    branch: dev
   secretRef:
     name: flux-system
   url: ssh://git@github.com/Avramenko-Vitaliy/rd-capstone

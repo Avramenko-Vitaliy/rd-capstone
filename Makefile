@@ -6,7 +6,7 @@ bootstrap:
 	flux bootstrap github \
       --owner=$(GITHUB_USER) \
       --repository=$(REPO) \
-      --branch=main \
+      --branch=master \
       --path=./infra/clusters/rd-cluster \
       --personal
 
@@ -14,7 +14,7 @@ build:
 	mvn clean package -Pdocker
 
 lint:
-	helm lint ./infra/charts/rd-capstone -f ./infra/charts/rd-capstone/values.yaml -n $(NAMESPACE)
+	helm lint ./infra/charts/rd-app -f ./infra/charts/rd-app/values.yaml -n $(NAMESPACE)
 
 template:
-	helm template ./infra/charts/rd-capstone -f ./infra/charts/rd-capstone/values.yaml -n $(NAMESPACE)
+	helm template ./infra/charts/rd-app -f ./infra/charts/rd-app/values.yaml -n $(NAMESPACE)

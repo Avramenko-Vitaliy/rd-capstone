@@ -13,3 +13,11 @@ spec:
         kind: GitRepository
         name: flux-system
         namespace: flux-system
+  values:
+    rdApp:
+      api:
+        image:
+          tag: latest # {"$imagepolicy": "flux-system:rd-api:tag"}
+      ui:
+        image:
+          tag: latest # {"$imagepolicy": "flux-system:rd-ui:tag"}

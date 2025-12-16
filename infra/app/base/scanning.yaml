@@ -55,7 +55,7 @@ spec:
   interval: 10m
   sourceRef:
     kind: GitRepository
-    name: rd-capstone
+    name: flux-system
   git:
     checkout:
       ref:

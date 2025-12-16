@@ -20,5 +20,16 @@ lint:
 template:
 	helm template ./infra/charts/rd-app -f ./infra/charts/rd-app/values.yaml -n $(NAMESPACE)
 
-build-infra:
+build-ks:
 	flux build ks rd-dev --path ./infra/clusters/rd-cluster --kustomization-file ./infra/clusters/rd-cluster/app-dev.yaml --dry-run
+
+rc-dev:
+	flux reconcile ks rd-dev
+
+rc-prod:
+	flux reconcile ks rd-prod
+
+rc-fs:
+	flux reconcile ks flux-system
+
+rc: rc-dev rc-prod rc-fs

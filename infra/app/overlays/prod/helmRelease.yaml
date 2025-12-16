@@ -13,6 +13,6 @@ spec:
         image:
           tag: prod # {"$imagepolicy": "prod:rd-api:tag"}
       ui:
-        replicas: 1
+        replicas: 3
         image:
           tag: prod # {"$imagepolicy": "prod:rd-ui:tag"}

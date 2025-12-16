@@ -4,6 +4,7 @@ NAMESPACE=default
 
 bootstrap:
 	flux bootstrap github \
+	  --read-write-key=true \
 	  --components-extra=image-reflector-controller,image-automation-controller \
       --owner=$(GITHUB_USER) \
       --repository=$(REPO) \

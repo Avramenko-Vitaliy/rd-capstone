@@ -5,17 +5,20 @@ kind: Deployment
 metadata:
   name: {{ include "rd-app.fullname" $ }}-{{ $name }}
   labels:
-    {{- $name | nindent 4 }}
+    {{- include "rd-app.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: {{ $name }}
 spec:
   replicas: {{ $app.replicas }}
   selector:
     matchLabels:
-      {{- $name | nindent 6 }}
+      {{- include "rd-app.selectorLabels" $ | nindent 6 }}
+      app.kubernetes.io/component: {{ $name }}
   template:
     metadata:
       name: {{ $name }}
       labels:
-        {{- $name | nindent 8 }}
+        {{- include "rd-app.labels" $ | nindent 8 }}
+        app.kubernetes.io/component: {{ $name }}
     spec:
       containers:
         - name: {{ $name }}
@@ -27,10 +30,12 @@ spec:
             - containerPort: {{ $app.image.port }}
               protocol: TCP
           {{- if $app.probes.readiness }}
-          {{- toYaml $app.probes.readiness | nindent 10 }}
+          readinessProbe:
+            {{- toYaml $app.probes.readiness | nindent 12 }}
           {{- end }}
           {{- if $app.probes.liveness }}
-          {{- toYaml $app.probes.liveness | nindent 10 }}
+          livenessProbe:
+            {{- toYaml $app.probes.liveness | nindent 12 }}
           {{- end }}
       {{- if $app.restartPolicy }}
       restartPolicy: {{ $app.restartPolicy }}

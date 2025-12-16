@@ -65,7 +65,11 @@ spec:
       author:
         email: fluxcdbot@users.noreply.github.com
         name: fluxcdbot
-      messageTemplate: '{{range .Changed.Changes}}{{print .OldValue}} -> {{println .NewValue}}{{end}}'
+      messageTemplate: |
+        Automated image update:
+        {{- range .Changed.Changes }}
+        - {{ .OldValue }} → {{ .NewValue }}
+        {{- end }}
     push:
       branch: master
   update:

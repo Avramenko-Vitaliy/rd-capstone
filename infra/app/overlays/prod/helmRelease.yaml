@@ -8,6 +8,11 @@ spec:
   values:
     rdApp:
       api:
+        enabled: false
         replicas: 3
+        image:
+          tag: prod
+      ui:
+        replicas: 1
         image:
           tag: prod

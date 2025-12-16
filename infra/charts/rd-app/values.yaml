@@ -3,6 +3,7 @@ fullnameOverride: ""
 
 rdApp:
   api:
+    enabled: true
     image:
       repository: vitaliyavramenko/rd-api
       tag: latest
@@ -32,6 +33,7 @@ rdApp:
         timeoutSeconds: 1
         failureThreshold: 5
   ui:
+    enabled: true
     image:
       repository: vitaliyavramenko/rd-ui
       tag: latest

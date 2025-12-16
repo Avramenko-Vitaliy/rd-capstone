@@ -1,4 +1,5 @@
 {{- range $name, $app := .Values.rdApp }}
+{{- if $app.enabled }}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -40,4 +41,5 @@ spec:
       {{- if $app.restartPolicy }}
       restartPolicy: {{ $app.restartPolicy }}
       {{- end }}
+{{- end }}
 {{- end }}

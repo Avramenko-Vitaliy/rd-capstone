@@ -24,12 +24,12 @@ spec:
           - name: SPRING_DATASOURCE_USERNAME
             valueFrom:
               configMapKeyRef:
-                name: rd-secret
+                name: rd_user-secret
                 key: username
           - name: SPRING_DATASOURCE_PASSWORD
             valueFrom:
               configMapKeyRef:
-                name: rd-secret
+                name: rd_user-secret
                 key: password
       ui:
         image:

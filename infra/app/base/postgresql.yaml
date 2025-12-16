@@ -7,8 +7,6 @@ spec:
     initdb:
       database: rd-capstone
       owner: rd_user
-      secret:
-        name: rd-secret
   instances: 1
   storage:
     size: 1Gi

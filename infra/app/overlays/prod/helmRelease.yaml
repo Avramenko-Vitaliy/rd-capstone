@@ -11,8 +11,8 @@ spec:
         enabled: false
         replicas: 3
         image:
-          tag: prod # {"$imagepolicy": "prod:rd-api:tag"}
+          tag: prod-20251216-173312 # {"$imagepolicy": "prod:rd-api:tag"}
       ui:
         replicas: 3
         image:
-          tag: prod # {"$imagepolicy": "prod:rd-ui:tag"}
+          tag: prod-20251216-121249 # {"$imagepolicy": "prod:rd-ui:tag"}

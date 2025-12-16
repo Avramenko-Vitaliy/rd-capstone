@@ -15,4 +15,4 @@ spec:
       ui:
         replicas: 1
         image:
-          tag: dev # {"$imagepolicy": "flux-system:rd-api:tag"}
+          tag: dev # {"$imagepolicy": "flux-system:rd-ui:tag"}

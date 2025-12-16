@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "rd-app.fullname" $ }}
+  name: {{ include "rd-app.fullname" $ }}-{{ $name }}
   labels:
     {{- $name | nindent 4 }}
 spec:

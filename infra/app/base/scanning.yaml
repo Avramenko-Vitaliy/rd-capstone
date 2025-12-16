@@ -69,5 +69,5 @@ spec:
     push:
       branch: master
   update:
-    path: ./infra/clusters/rd-cluster
+    path: ./infra/app
     strategy: Setters

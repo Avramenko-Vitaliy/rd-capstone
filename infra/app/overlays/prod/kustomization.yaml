@@ -4,4 +4,3 @@ resources:
 patches:
   - path: helmRelease.yaml
   - path: scanning.yaml
-  - path: postgresql.yaml

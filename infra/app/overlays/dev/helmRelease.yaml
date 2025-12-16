@@ -8,7 +8,6 @@ spec:
   values:
     rdApp:
       api:
-        enabled: false
         replicas: 1
         image:
           tag: dev-20251216-162934 # {"$imagepolicy": "dev:rd-api:tag"}

@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: ./infra/charts/rd-app
-      version: "0.1.1"
+      version: "0.2.0"
       sourceRef:
         kind: GitRepository
         name: flux-system
@@ -18,6 +18,22 @@ spec:
       api:
         image:
           tag: latest # {"$imagepolicy": "default:rd-api:tag"}
+        env:
+          - name: SPRING_DATASOURCE_URL
+            value: jdbc:postgresql://postgres:5432/rd-capstone
+          - name: SPRING_DATASOURCE_USERNAME
+            valueFrom:
+              configMapKeyRef:
+                name: rd-secret
+                key: username
+          - name: SPRING_DATASOURCE_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: rd-secret
+                key: password
       ui:
         image:
           tag: latest # {"$imagepolicy": "default:rd-ui:tag"}
+  dependsOn:
+    - name: postgres-cluster
+    - name: pg-db

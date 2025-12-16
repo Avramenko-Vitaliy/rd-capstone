@@ -38,6 +38,18 @@ spec:
           livenessProbe:
             {{- toYaml $app.probes.liveness | nindent 12 }}
           {{- end }}
+          {{- if $app.envFrom }}
+          envFrom:
+          {{- range $app.envFrom }}
+            - {{ toYaml . | nindent 12 }}
+          {{- end }}
+          {{- end }}
+          {{- if $app.env }}
+          env:
+          {{- range $app.env }}
+            - {{ toYaml . | nindent 12 }}
+          {{- end }}
+          {{- end }}
       {{- if $app.restartPolicy }}
       restartPolicy: {{ $app.restartPolicy }}
       {{- end }}

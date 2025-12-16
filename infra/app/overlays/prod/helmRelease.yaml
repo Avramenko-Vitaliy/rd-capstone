@@ -11,8 +11,8 @@ spec:
         enabled: false
         replicas: 3
         image:
-          tag: prod-20251216-121245 # {"$imagepolicy": "flux-system:rd-api:tag"}
+          tag: prod # {"$imagepolicy": "flux-system:rd-api:tag"}
       ui:
         replicas: 1
         image:
-          tag: prod-20251216-121249 # {"$imagepolicy": "flux-system:rd-ui:tag"}
+          tag: prod # {"$imagepolicy": "flux-system:rd-ui:tag"}

@@ -24,12 +24,12 @@ build-ks:
 	flux build ks rd-dev --path ./infra/clusters/rd-cluster --kustomization-file ./infra/clusters/rd-cluster/app-dev.yaml --dry-run
 
 rc-dev:
-	flux reconcile ks rd-dev
+	flux reconcile ks rd-dev --with-source
 
 rc-prod:
-	flux reconcile ks rd-prod
+	flux reconcile ks rd-prod --with-source
 
 rc-fs:
-	flux reconcile ks flux-system
+	flux reconcile ks flux-system --with-source
 
 rc: rc-dev rc-prod rc-fs

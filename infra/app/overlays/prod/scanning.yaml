@@ -23,3 +23,16 @@ spec:
   policy:
     alphabetical:
       order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageUpdateAutomation
+metadata:
+  name: rd-automation
+  namespace: flux-system
+spec:
+  git:
+    checkout:
+      ref:
+        branch: prod
+    push:
+      branch: prod

@@ -36,4 +36,3 @@ spec:
           tag: latest # {"$imagepolicy": "default:rd-ui:tag"}
   dependsOn:
     - name: postgres
-    - name: pg-db

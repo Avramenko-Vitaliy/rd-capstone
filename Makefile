@@ -36,4 +36,7 @@ rc-fs:
 rc-is:
 	flux reconcile ks image-scanning --with-source
 
-rc: rc-fs rc-is rc-dev rc-prod
+rc-po:
+	flux reconcile ks pg-operator --with-source
+
+rc: rc-fs rc-po rc-is rc-dev rc-prod

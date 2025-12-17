@@ -10,8 +10,8 @@ spec:
       api:
         replicas: 1
         image:
-          tag: prod # {"$imagepolicy": "prod:rd-api:tag"}
+          tag: prod # {"$imagepolicy": "flux-system:rd-api-prod:tag"}
       ui:
         replicas: 1
         image:
-          tag: prod # {"$imagepolicy": "prod:rd-ui:tag"}
+          tag: prod # {"$imagepolicy": "flux-system:rd-ui-prod:tag"}

@@ -1,6 +1,10 @@
 nameOverride: ""
 fullnameOverride: ""
 
+cloudnative-pg:
+  config:
+    clusterWide: false
+
 rdApp:
   api:
     enabled: true

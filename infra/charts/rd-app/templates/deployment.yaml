@@ -40,15 +40,11 @@ spec:
           {{- end }}
           {{- if $app.envFrom }}
           envFrom:
-          {{- range $app.envFrom }}
-            - {{ toYaml . | nindent 12 }}
-          {{- end }}
+            {{- toYaml $app.envFrom | nindent 12 }}
           {{- end }}
           {{- if $app.env }}
           env:
-          {{- range $app.env }}
-            - {{ toYaml . | nindent 12 }}
-          {{- end }}
+            {{- toYaml $app.env | nindent 12 }}
           {{- end }}
       {{- if $app.restartPolicy }}
       restartPolicy: {{ $app.restartPolicy }}

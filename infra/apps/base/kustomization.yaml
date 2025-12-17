@@ -1,3 +1,6 @@
 resources:
 - postgresql.yaml
 - application.yaml
+- apiImage.yaml
+- uiImage.yaml
+- automation.yaml

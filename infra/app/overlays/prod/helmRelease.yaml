@@ -8,10 +8,10 @@ spec:
   values:
     rdApp:
       api:
-        replicas: 3
+        replicas: 1
         image:
           tag: prod # {"$imagepolicy": "prod:rd-api:tag"}
       ui:
-        replicas: 3
+        replicas: 1
         image:
           tag: prod # {"$imagepolicy": "prod:rd-ui:tag"}

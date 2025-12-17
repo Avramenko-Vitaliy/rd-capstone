@@ -14,9 +14,9 @@ import java.util.stream.Collectors;
 public class TodoService {
 
     private final TodosRepository repository;
-    private final TodoMapper todoMapper;
+    private final TodoMapper mapper;
 
     public List<TodoDto> getTodos() {
-        return repository.findAll().stream().map(todoMapper::toDto).collect(Collectors.toList());
+        return repository.findAll().stream().map(mapper::toDto).collect(Collectors.toList());
     }
 }

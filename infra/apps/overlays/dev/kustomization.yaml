@@ -6,4 +6,10 @@ patches:
   - path: automation.yaml
   - path: uiImage.yaml
   - path: apiImage.yaml
-  - path: ingress.yaml
+  - target:
+      kind: Ingress
+      name: rd-ingress
+    patch: |
+      - op: replace
+        path: /spec/rules/0/host
+        value: dev.rd-capstone.local

@@ -3,4 +3,3 @@ resources:
   - ../../base
 patches:
   - path: helmRelease.yaml
-  - path: scanning.yaml

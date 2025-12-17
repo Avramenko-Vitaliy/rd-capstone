@@ -11,26 +11,20 @@ rdApp:
     replicas: 1
     probes:
       liveness:
-        exec:
-          command:
-            - sh
-            - -c
-            - |
-              curl -fsS http://127.0.0.1:8080/actuator/health/liveness | grep -q '"status":"UP"'
+        httpGet:
+          path: /actuator/health/liveness
+          port: 8080
         initialDelaySeconds: 15
         periodSeconds: 30
-        timeoutSeconds: 1
+        timeoutSeconds: 5
         failureThreshold: 5
       readiness:
-        exec:
-          command:
-            - sh
-            - -c
-            - |
-              curl -fsS http://127.0.0.1:8080/actuator/health/readiness | grep -q '"status":"UP"'
+        httpGet:
+          path: /actuator/health/readiness
+          port: 8080
         initialDelaySeconds: 15
         periodSeconds: 30
-        timeoutSeconds: 1
+        timeoutSeconds: 5
         failureThreshold: 5
   ui:
     enabled: true
@@ -50,5 +44,5 @@ rdApp:
           port: 80
         initialDelaySeconds: 5
         periodSeconds: 10
-        timeoutSeconds: 1
+        timeoutSeconds: 5
         failureThreshold: 3

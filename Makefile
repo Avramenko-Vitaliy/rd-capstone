@@ -42,12 +42,9 @@ rc-prod:
 rc-fs:
 	flux reconcile ks flux-system --with-source
 
-rc-is:
-	flux reconcile ks image-scanning --with-source
-
 rc-po:
 	flux reconcile ks pg-operator --with-source
 
-rc: rc-fs rc-po rc-is rc-dev rc-prod
+rc: rc-fs rc-po rc-dev rc-prod
 
 init: bootstrap add-branch

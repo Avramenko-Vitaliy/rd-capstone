@@ -4,3 +4,4 @@ resources:
 - apiImage.yaml
 - uiImage.yaml
 - automation.yaml
+- ingress.yaml

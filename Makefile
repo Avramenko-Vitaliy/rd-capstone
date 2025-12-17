@@ -36,4 +36,7 @@ rc-cnpg:
 rc-fs:
 	flux reconcile ks flux-system --with-source
 
-rc: rc-cnpg rc-dev rc-prod rc-fs
+rc-is:
+	flux reconcile ks image-scanning --with-source
+
+rc: rc-is rc-cnpg rc-dev rc-prod rc-fs

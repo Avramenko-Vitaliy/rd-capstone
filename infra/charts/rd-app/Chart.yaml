@@ -1,7 +1,7 @@
 apiVersion: v2
 name: rd-app
 type: application
-version: 0.2.2
+version: 0.3.0
 appVersion: "0.0.1"
 
 dependencies:

@@ -5,11 +5,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./infra/app/overlays/dev
+  path: ./infra/apps/overlays/dev
   prune: true
   targetNamespace: dev
   sourceRef:
     kind: GitRepository
     name: flux-system
-  dependsOn:
-    - name: cnpg-operator

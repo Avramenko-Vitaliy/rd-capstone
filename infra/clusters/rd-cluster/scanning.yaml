@@ -1,13 +1,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: rd-prod
+  name: image-scanning
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./infra/apps/overlays/prod
+  path: ./infra/infrastructure/scanning
   prune: true
-  targetNamespace: prod
+  targetNamespace: flux-system
   sourceRef:
     kind: GitRepository
     name: flux-system

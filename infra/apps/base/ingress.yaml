@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rd-ingress
+  annotations:
+    traefik.ingress.kubernetes.io/rewrite-target: /
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: rd-capstone.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: rd-app-ui
+                port:
+                  number: 80
+          - path: /rd-api
+            pathType: Prefix
+            backend:
+              service:
+                name: rd-app-api
+                port:
+                  number: 8080

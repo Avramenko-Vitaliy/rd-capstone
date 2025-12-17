@@ -6,3 +6,4 @@ patches:
   - path: automation.yaml
   - path: uiImage.yaml
   - path: apiImage.yaml
+  - path: ingress.yaml

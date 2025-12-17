@@ -13,9 +13,9 @@ spec:
       {{- include "rd-app.selectorLabels" $ | nindent 6 }}
       app.kubernetes.io/component: {{ $name }}
   ports:
-    - port: {{ $app.image.port | quote }}
+    - port: {{ $app.image.port }}
       protocol: TCP
-      targetPort: {{ $app.image.port | quote }}
+      targetPort: {{ $app.image.port }}
   type: ClusterIP
 {{- end }}
 {{- end }}

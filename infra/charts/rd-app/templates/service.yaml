@@ -1,0 +1,21 @@
+{{- range $name, $app := .Values.rdApp }}
+{{- if $app.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "rd-app.fullname" $ }}-{{ $name }}
+  labels:
+    {{- include "rd-app.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: {{ $name }}
+spec:
+  selector:
+      {{- include "rd-app.selectorLabels" $ | nindent 6 }}
+      app.kubernetes.io/component: {{ $name }}
+  ports:
+    - port: {{ $app.image.port | quote }}
+      protocol: TCP
+      targetPort: {{ $app.image.port | quote }}
+  type: ClusterIP
+{{- end }}
+{{- end }}

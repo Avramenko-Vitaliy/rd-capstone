@@ -10,7 +10,7 @@ spec:
       api:
         replicas: 1
         image:
-          tag: prod-20251216-173312 # {"$imagepolicy": "prod:rd-api:tag"}
+          tag: prod-20251217-094158 # {"$imagepolicy": "prod:rd-api:tag"}
       ui:
         replicas: 1
         image:

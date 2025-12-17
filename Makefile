@@ -11,7 +11,11 @@ bootstrap:
       --branch=dev \
       --path=./infra/clusters/rd-cluster \
       --personal
-
+	flux create source git prod \
+      --url=ssh://git@github.com/Avramenko-Vitaliy/rd-capstone.git \
+      --branch=prod \
+      --secret-ref=flux-system \
+      --namespace=flux-system
 build:
 	mvn clean package -Pdocker
 

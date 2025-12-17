@@ -1,7 +1,6 @@
 resources:
   - autoscaler.yaml
   - namespace.yaml
-  - repository.yaml
   - ../../base
 patches:
   - path: application.yaml

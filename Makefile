@@ -1,6 +1,8 @@
 GITHUB_USER=Avramenko-Vitaliy
 REPO=rd-capstone
 NAMESPACE=default
+MAIN_BRANCH=dev
+BRANCH=prod
 
 bootstrap:
 	flux bootstrap github \
@@ -8,15 +10,18 @@ bootstrap:
 	  --components-extra=image-reflector-controller,image-automation-controller \
       --owner=$(GITHUB_USER) \
       --repository=$(REPO) \
-      --branch=dev \
+      --branch=$(MAIN_BRANCH) \
       --path=./infra/clusters/rd-cluster \
       --personal
+
+add-branch:
 	flux create source git prod \
       --url=ssh://git@github.com/Avramenko-Vitaliy/rd-capstone.git \
-      --branch=prod \
+      --branch=$(BRANCH) \
       --secret-ref=flux-system \
       --namespace=flux-system
-build:
+
+build-app:
 	mvn clean package -Pdocker
 
 lint:
@@ -44,3 +49,5 @@ rc-po:
 	flux reconcile ks pg-operator --with-source
 
 rc: rc-fs rc-po rc-is rc-dev rc-prod
+
+init: bootstrap add-branch

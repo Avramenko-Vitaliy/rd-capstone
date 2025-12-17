@@ -3,3 +3,6 @@ resources:
   - ../../base
 patches:
   - path: application.yaml
+  - path: automation.yaml
+  - path: uiImage.yaml
+  - path: apiImage.yaml

@@ -1,0 +1,12 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: rd-api
+  namespace: flux-system
+spec:
+  filterTags:
+    pattern: '^prod-(?P<timestamp>.*)$'
+    extract: '$timestamp'
+  policy:
+    alphabetical:
+      order: asc

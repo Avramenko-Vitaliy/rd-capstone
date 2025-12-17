@@ -1,0 +1,29 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImageUpdateAutomation
+metadata:
+  name: rd-automation
+  namespace: flux-system
+spec:
+  interval: 10m
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  git:
+    checkout:
+      ref:
+        branch: main
+    commit:
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fluxcdbot
+      messageTemplate: |
+        Automated image update:
+        {{- range .Changed.Changes }}
+        - {{ .OldValue }} → {{ .NewValue }}
+        {{- end }}
+    push:
+      branch: main
+  update:
+    path: ./infra/apps
+    strategy: Setters

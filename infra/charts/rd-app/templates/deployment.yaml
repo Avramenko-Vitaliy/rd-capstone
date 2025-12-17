@@ -46,6 +46,10 @@ spec:
           env:
             {{- toYaml $app.env | nindent 12 }}
           {{- end }}
+          {{- if $app.resources }}
+          resources:
+            {{- toYaml $app.resources | nindent 12 }}
+          {{- end }}
       {{- if $app.restartPolicy }}
       restartPolicy: {{ $app.restartPolicy }}
       {{- end }}

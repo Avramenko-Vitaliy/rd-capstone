@@ -111,7 +111,7 @@ spec:
     push:
       branch: dev
   update:
-    path: ./infra/app
+    path: ./infra/apps
     strategy: Setters
 ---
 apiVersion: image.toolkit.fluxcd.io/v1
@@ -141,5 +141,5 @@ spec:
     push:
       branch: prod
   update:
-    path: ./infra/app
+    path: ./infra/apps
     strategy: Setters

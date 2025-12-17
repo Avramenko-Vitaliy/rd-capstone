@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: ./infra/charts/rd-app
-      version: "0.2.1"
+      version: "0.2.2"
       sourceRef:
         kind: GitRepository
         name: flux-system

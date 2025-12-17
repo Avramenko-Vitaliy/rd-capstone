@@ -9,7 +9,7 @@ spec:
     rdApp:
       api:
         image:
-          tag: prod # {"$imagepolicy": "flux-system:rd-api-prod:tag"}
+          tag: prod # {"$imagepolicy": "prod:rd-api:tag"}
         resources:
           requests:
             cpu: 250m
@@ -20,7 +20,7 @@ spec:
       ui:
         replicas: 2
         image:
-          tag: prod # {"$imagepolicy": "flux-system:rd-ui-prod:tag"}
+          tag: prod # {"$imagepolicy": "prod:rd-ui:tag"}
         resources:
           requests:
             cpu: 50m

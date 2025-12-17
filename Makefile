@@ -30,7 +30,10 @@ rc-dev:
 rc-prod:
 	flux reconcile ks rd-prod --with-source
 
+rc-cnpg:
+	flux reconcile ks cnpg-operator --with-source
+
 rc-fs:
 	flux reconcile ks flux-system --with-source
 
-rc: rc-dev rc-prod rc-fs
+rc: rc-cnpg rc-dev rc-prod rc-fs

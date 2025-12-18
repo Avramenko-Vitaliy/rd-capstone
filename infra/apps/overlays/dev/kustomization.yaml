@@ -6,14 +6,16 @@ patches:
   - path: automation.yaml
   - path: ui-image.yaml
   - path: api-image.yaml
-  - path: ingress.yaml
-    target:
+  - target:
       kind: Ingress
       name: rd-ingress
     patch: |
       - op: replace
         path: /spec/rules/0/host
         value: dev.rd-capstone.local
+      - op: replace
+        path: /metadata/annotations/traefik.ingress.kubernetes.io/router.entrypoints
+        value: websecure
   - target:
       kind: Certificate
       name: cert-manager

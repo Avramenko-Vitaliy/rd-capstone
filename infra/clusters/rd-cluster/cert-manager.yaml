@@ -7,7 +7,7 @@ spec:
   interval: 10m
   path: ./infra/infrastructure/cert-manager
   prune: true
-  targetNamespace: flux-system
+  targetNamespace: cert-manager
   sourceRef:
     kind: GitRepository
     name: flux-system

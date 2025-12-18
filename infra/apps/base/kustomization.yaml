@@ -1,7 +1,8 @@
 resources:
+- cert-manger.yaml
 - postgresql.yaml
 - application.yaml
-- apiImage.yaml
-- uiImage.yaml
+- api-image.yaml
+- ui-image.yaml
 - automation.yaml
 - ingress.yaml

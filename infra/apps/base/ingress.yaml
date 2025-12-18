@@ -4,12 +4,16 @@ metadata:
   name: rd-ingress
   annotations:
     traefik.ingress.kubernetes.io/rewrite-target: /
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
   ingressClassName: traefik
+  tls:
+    - hosts:
+        - rd-capstone.local
+        - dev.rd-capstone.local
+      secretName: cert-manager-tls
   rules:
-    - host: rd-capstone.local
-      http:
+    - http:
         paths:
           - path: /
             pathType: Prefix

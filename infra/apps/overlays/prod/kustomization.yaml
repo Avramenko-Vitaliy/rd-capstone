@@ -3,7 +3,6 @@ resources:
   - namespace.yaml
   - ../../base
 patches:
-  - path: ingress.yaml
   - path: application.yaml
   - path: api-image.yaml
   - path: ui-image.yaml

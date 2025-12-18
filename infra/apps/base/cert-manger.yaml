@@ -14,6 +14,7 @@ metadata:
 spec:
   dnsNames:
     - rd-capstone.local
+    - dev.rd-capstone.local
   secretName: cert-manager-tls
   issuerRef:
     name: cert-manager

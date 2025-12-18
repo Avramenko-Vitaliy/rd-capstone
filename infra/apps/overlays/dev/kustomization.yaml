@@ -4,12 +4,5 @@ resources:
 patches:
   - path: application.yaml
   - path: automation.yaml
-  - path: uiImage.yaml
-  - path: apiImage.yaml
-  - target:
-      kind: Ingress
-      name: rd-ingress
-    patch: |
-      - op: replace
-        path: /spec/rules/0/host
-        value: dev.rd-capstone.local
+  - path: ui-image.yaml
+  - path: api-image.yaml

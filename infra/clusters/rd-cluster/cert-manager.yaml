@@ -1,16 +1,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: rd-dev
+  name: cert-manager
   namespace: flux-system
 spec:
   interval: 10m
-  path: ./infra/apps/overlays/dev
+  path: ./infra/infrastructure/cert-manager
   prune: true
-  targetNamespace: dev
+  targetNamespace: cert-manager
   sourceRef:
     kind: GitRepository
     name: flux-system
-  dependsOn:
-    - name: cert-manager
-    - name: pg-operator

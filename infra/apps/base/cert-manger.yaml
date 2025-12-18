@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: cert-manager
+  namespace: flux-system
+spec:
+  selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: cert-manager
+  namespace: flux-system
+spec:
+  dnsNames:
+    - rd-capstone.local
+    - dev.rd-capstone.local
+  secretName: cert-manager-tls
+  issuerRef:
+    name: cert-manager

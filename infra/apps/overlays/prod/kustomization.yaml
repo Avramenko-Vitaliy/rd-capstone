@@ -1,9 +1,9 @@
 resources:
-  - autoscaler.yaml
   - namespace.yaml
+  - autoscaler.yaml
   - ../../base
 patches:
   - path: application.yaml
-  - path: apiImage.yaml
-  - path: uiImage.yaml
+  - path: api-image.yaml
+  - path: ui-image.yaml
   - path: automation.yaml

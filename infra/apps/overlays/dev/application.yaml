@@ -10,7 +10,7 @@ spec:
       api:
         replicas: 1
         image:
-          tag: dev-20251217-153643 # {"$imagepolicy": "dev:rd-api:tag"}
+          tag: dev-20251219-115145 # {"$imagepolicy": "dev:rd-api:tag"}
       ui:
         replicas: 1
         image:

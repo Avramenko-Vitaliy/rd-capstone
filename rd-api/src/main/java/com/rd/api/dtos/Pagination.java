@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Collections;
 import java.util.List;
 
 @Data
@@ -12,6 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 public class Pagination<T> {
 
-    private List<T> data = Collections.emptyList();
-    private Integer total = 0;
+    private List<T> data;
+    private long total;
 }

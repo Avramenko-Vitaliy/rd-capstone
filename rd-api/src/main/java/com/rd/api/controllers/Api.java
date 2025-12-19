@@ -15,5 +15,6 @@ public class Api {
     @UtilityClass
     public class Todos {
         public static final String TODOS = "/todos";
+        public static final String TODO_BY_ID = "/todos/{id}";
     }
 }

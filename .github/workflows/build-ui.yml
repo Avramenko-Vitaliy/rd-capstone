@@ -4,15 +4,15 @@ on:
   push:
     branches: [ "dev", "prod" ]
     paths:
-      - 'rd-ui/**'
+      - 'todo-ui/**'
   pull_request:
     branches: [ "dev", "prod" ]
     paths:
-      - 'rd-ui/**'
+      - 'todo-ui/**'
 
 jobs:
   ci:
     uses: ./.github/workflows/ci-template.yml
     with:
-      module: rd-ui
+      module: todo-ui
     secrets: inherit

@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
-  name: rd-ui
+  name: todo-ui
   namespace: flux-system
 spec:
   filterTags:

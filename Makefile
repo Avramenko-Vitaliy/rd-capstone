@@ -56,3 +56,7 @@ template:
 #---------------- Application --------------
 build-app:
 	mvn clean package -Pdocker
+
+#---------------- Kubernetes --------------
+port-forward:
+	kubectl port-forward -n kube-system svc/traefik 8443:443

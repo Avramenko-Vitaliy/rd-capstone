@@ -1,0 +1,7 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100dvh;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}

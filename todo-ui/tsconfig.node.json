@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "moduleDetection": "force",
+
+    /* Node-specific settings */
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+
+    /* Build optimizations */
+    "noUncheckedSideEffectImports": true,
+    "types": ["node"]
+  },
+  "include": ["vite.config.ts", "*.config.js", "*.config.ts"],
+  "exclude": ["node_modules"]
+}

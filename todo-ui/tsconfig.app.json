@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "moduleDetection": "force",
+
+    /* App-specific settings */
+    "noUncheckedSideEffectImports": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+
+    /* React optimizations */
+    "jsxImportSource": "react",
+    "exactOptionalPropertyTypes": false,
+    "noPropertyAccessFromIndexSignature": true
+  },
+  "include": ["src"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"]
+}

@@ -1,20 +1,20 @@
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
-  name: rd-ui
+  name: todo-ui
   namespace: flux-system
 spec:
-  image: vitaliyavramenko/rd-ui
+  image: vitaliyavramenko/todo-ui
   interval: 5m
 ---
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata:
-  name: rd-ui
+  name: todo-ui
   namespace: flux-system
 spec:
   imageRepositoryRef:
-    name: rd-ui
+    name: todo-ui
   filterTags:
     pattern: '^latest$'
   policy:

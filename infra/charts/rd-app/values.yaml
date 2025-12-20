@@ -5,7 +5,7 @@ rdApp:
   api:
     enabled: true
     image:
-      repository: vitaliyavramenko/rd-api
+      repository: vitaliyavramenko/todo-api
       tag: latest
       port: 8080
     replicas: 1
@@ -29,7 +29,7 @@ rdApp:
   ui:
     enabled: true
     image:
-      repository: vitaliyavramenko/rd-ui
+      repository: vitaliyavramenko/todo-ui
       tag: latest
       port: 80
     replicas: 1

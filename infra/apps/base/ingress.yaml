@@ -22,7 +22,7 @@ spec:
                 name: rd-app-ui
                 port:
                   number: 80
-          - path: /rd-api
+          - path: /todo-api
             pathType: Prefix
             backend:
               service:

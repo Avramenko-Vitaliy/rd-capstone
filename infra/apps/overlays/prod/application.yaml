@@ -20,7 +20,7 @@ spec:
       ui:
         replicas: 2
         image:
-          tag: prod # {"$imagepolicy": "prod:todo-ui:tag"}
+          tag: prod-20251220-221453 # {"$imagepolicy": "prod:todo-ui:tag"}
         resources:
           requests:
             cpu: 50m

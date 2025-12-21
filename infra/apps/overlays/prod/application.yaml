@@ -9,7 +9,7 @@ spec:
     rdApp:
       api:
         image:
-          tag: prod # {"$imagepolicy": "prod:todo-api:tag"}
+          tag: prod-20251220-221453 # {"$imagepolicy": "prod:todo-api:tag"}
         resources:
           requests:
             cpu: 250m

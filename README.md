@@ -34,3 +34,6 @@ The automation runs every 10 minutes and commits image updates back to the respe
 - Deployments managed via Kustomize overlays (dev/prod)
 - Certificate management via cert-manager
 - Target namespaces: `dev`, `prod` and `flux-system`
+
+## Proofs of working
+![result.png](assets/result.png)

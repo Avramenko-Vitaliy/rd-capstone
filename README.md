@@ -1,3 +1,11 @@
+### PROD ENV
+[![Build API](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-api.yml/badge.svg?branch=dev)](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-api.yml)
+[![Build UI](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-ui.yml/badge.svg?branch=dev)](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-ui.yml)
+
+### DEV ENV
+[![Build API](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-api.yml/badge.svg?branch=prod)](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-api.yml)
+[![Build UI](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-ui.yml/badge.svg?branch=prod)](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-ui.yml)
+
 # Project Description
 
 This project implements a GitOps-based deployment infrastructure using FluxCD for continuous delivery.

@@ -1,0 +1,7 @@
+resources:
+  - flux-system/kustomization.yaml
+  - prod-repo.yaml
+  - cert-manager.yaml
+  - cnpg.yaml
+  - app-dev.yaml
+  - app-prod.yaml

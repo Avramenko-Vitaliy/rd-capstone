@@ -14,4 +14,4 @@ spec:
       ui:
         replicas: 1
         image:
-          tag: dev-20251217-144137 # {"$imagepolicy": "dev:todo-ui:tag"}
+          tag: dev-20251220-221101 # {"$imagepolicy": "dev:todo-ui:tag"}

@@ -9,8 +9,7 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - rd-capstone.local
-        - dev.rd-capstone.local
+        - ${host}
       secretName: cert-manager-tls
   rules:
     - http:

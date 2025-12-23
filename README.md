@@ -10,12 +10,19 @@
 
 This project implements a GitOps-based deployment infrastructure using FluxCD for continuous delivery.
 
-## Application
+## Project Structure
 
-The own application consists of two main parts:
-
-- **UI** - User Interface component
-- **API** - Backend API service
+```text
+.
+├── assets/             # Static assets (images, etc.)
+├── infra/              # Infrastructure as Code (FluxCD, Kustomize)
+│   ├── apps/           # Application manifests (base & overlays)
+│   ├── charts/         # Helm charts
+│   ├── clusters/       # Cluster-specific configurations
+│   └── infrastructure/ # Shared components (cert-manager, cnpg)
+├── todo-api/           # Backend API service (Java/Maven)
+└── todo-ui/            # Frontend User Interface (React/TS)
+```
 
 ## Database
 

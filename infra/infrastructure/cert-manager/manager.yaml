@@ -31,7 +31,7 @@ spec:
     global:
       leaderElection:
         namespace: flux-system
-    podSecurityContext:
+    securityContext:
       runAsNonRoot: true
       seccompProfile:
         type: RuntimeDefault
@@ -42,3 +42,27 @@ spec:
           - ALL
       readOnlyRootFilesystem: true
       runAsNonRoot: true
+    webhook:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containerSecurityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        readOnlyRootFilesystem: true
+        runAsNonRoot: true
+    cainjector:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containerSecurityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+            - ALL
+        readOnlyRootFilesystem: true
+        runAsNonRoot: true

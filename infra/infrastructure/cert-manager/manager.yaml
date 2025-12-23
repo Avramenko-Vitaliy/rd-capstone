@@ -29,4 +29,5 @@ spec:
     crds:
       enabled: true
     securityContext:
-      runAsNonRoot: false
+      runAsNonRoot: true
+      runAsUser: 1000

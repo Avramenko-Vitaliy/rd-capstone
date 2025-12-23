@@ -11,6 +11,9 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+  postBuild:
+    substitute:
+      host: "dev.rd-capstone.local"
   dependsOn:
     - name: cert-manager
     - name: pg-operator

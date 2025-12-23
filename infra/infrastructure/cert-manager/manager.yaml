@@ -28,3 +28,17 @@ spec:
   values:
     crds:
       enabled: true
+    global:
+      leaderElection:
+        namespace: flux-system
+    podSecurityContext:
+      runAsNonRoot: true
+      seccompProfile:
+        type: RuntimeDefault
+    containerSecurityContext:
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+          - ALL
+      readOnlyRootFilesystem: true
+      runAsNonRoot: true

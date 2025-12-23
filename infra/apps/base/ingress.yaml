@@ -12,7 +12,8 @@ spec:
         - ${host}
       secretName: cert-manager-tls
   rules:
-    - http:
+    - host: ${host}
+      http:
         paths:
           - path: /
             pathType: Prefix

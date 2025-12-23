@@ -28,3 +28,7 @@ spec:
   values:
     crds:
       enabled: true
+    securityContext:
+      runAsNonRoot: false
+    podSecurityContext:
+      runAsNonRoot: false

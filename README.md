@@ -1,13 +1,28 @@
+### PROD ENV
+[![Build API](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-api.yml/badge.svg?branch=dev)](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-api.yml)
+[![Build UI](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-ui.yml/badge.svg?branch=dev)](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-ui.yml)
+
+### DEV ENV
+[![Build API](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-api.yml/badge.svg?branch=prod)](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-api.yml)
+[![Build UI](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-ui.yml/badge.svg?branch=prod)](https://github.com/Avramenko-Vitaliy/rd-capstone/actions/workflows/build-ui.yml)
+
 # Project Description
 
 This project implements a GitOps-based deployment infrastructure using FluxCD for continuous delivery.
 
-## Application
+## Project Structure
 
-The own application consists of two main parts:
-
-- **UI** - User Interface component
-- **API** - Backend API service
+```text
+.
+├── assets/             # Static assets (images, etc.)
+├── infra/              # Infrastructure as Code (FluxCD, Kustomize)
+│   ├── apps/           # Application manifests (base & overlays)
+│   ├── charts/         # Helm charts
+│   ├── clusters/       # Cluster-specific configurations
+│   └── infrastructure/ # Shared components (cert-manager, cnpg)
+├── todo-api/           # Backend API service (Java/Maven)
+└── todo-ui/            # Frontend User Interface (React/TS)
+```
 
 ## Database
 
@@ -34,3 +49,6 @@ The automation runs every 10 minutes and commits image updates back to the respe
 - Deployments managed via Kustomize overlays (dev/prod)
 - Certificate management via cert-manager
 - Target namespaces: `dev`, `prod` and `flux-system`
+
+## Proofs of working
+![result.png](assets/result.png)

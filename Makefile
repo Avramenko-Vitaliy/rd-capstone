@@ -2,7 +2,6 @@ GITHUB_USER=Avramenko-Vitaliy
 REPO=rd-capstone
 NAMESPACE=default
 MAIN_BRANCH=dev
-BRANCH=prod
 KS_FILE=app-dev.yaml
 KS_NAME=rd-dev
 
@@ -16,13 +15,6 @@ bootstrap:
       --branch=$(MAIN_BRANCH) \
       --path=./infra/clusters/rd-cluster \
       --personal
-
-add-branch:
-	flux create source git prod \
-      --url=ssh://git@github.com/Avramenko-Vitaliy/rd-capstone.git \
-      --branch=$(BRANCH) \
-      --secret-ref=flux-system \
-      --namespace=flux-system
 
 build-ks:
 	flux build ks $(KS_NAME) --path ./infra/clusters/rd-cluster --kustomization-file ./infra/clusters/rd-cluster/$(KS_FILE) --dry-run
@@ -41,8 +33,6 @@ rc-po:
 
 rc-cm:
 	flux reconcile ks cert-manager
-
-init: bootstrap add-branch
 
 rc: rc-fs rc-cm rc-po rc-dev rc-prod
 

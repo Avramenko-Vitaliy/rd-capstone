@@ -12,5 +12,4 @@ spec:
     kind: GitRepository
     name: prod
   dependsOn:
-    - name: cert-manager
     - name: pg-operator

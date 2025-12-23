@@ -32,7 +32,7 @@ spec:
       leaderElection:
         namespace: flux-system
     securityContext:
-      runAsNonRoot: true
+      runAsNonRoot: false
       seccompProfile:
         type: RuntimeDefault
     containerSecurityContext:
@@ -41,10 +41,10 @@ spec:
         drop:
           - ALL
       readOnlyRootFilesystem: true
-      runAsNonRoot: true
+      runAsNonRoot: false
     webhook:
       securityContext:
-        runAsNonRoot: true
+        runAsNonRoot: false
         seccompProfile:
           type: RuntimeDefault
       containerSecurityContext:
@@ -53,10 +53,10 @@ spec:
           drop:
             - ALL
         readOnlyRootFilesystem: true
-        runAsNonRoot: true
+        runAsNonRoot: false
     cainjector:
       securityContext:
-        runAsNonRoot: true
+        runAsNonRoot: false
         seccompProfile:
           type: RuntimeDefault
       containerSecurityContext:
@@ -65,4 +65,4 @@ spec:
           drop:
             - ALL
         readOnlyRootFilesystem: true
-        runAsNonRoot: true
+        runAsNonRoot: false
